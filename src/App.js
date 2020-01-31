@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import Title from './Components/Title';
+import MessageHistory from './Components/MessageHistory';
+import MessageInput from './Components/MessageInput';
 
 function App() {
   return ( 
