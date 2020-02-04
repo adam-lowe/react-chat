@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 // import Title from './Components/Title';
-// import MessageHistory from './Components/MessageHistory';
+import MessageHistory from './Components/MessageHistory';
 // import MessageInput from './Components/MessageInput';
 
 const DUMMY_DATA = [
@@ -36,7 +36,7 @@ function App() {
              </li>
            )
          })}
-        {/* <MessageHistory messages={messageState.messages} /> */}
+        <MessageHistory messages={"TestingProp"} />
         {/* <MessageInput /> */}
     </div>
  );
