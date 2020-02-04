@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
-import Title from './Components/Title';
-import MessageHistory from './Components/MessageHistory';
-import MessageInput from './Components/MessageInput';
+// import Title from './Components/Title';
+// import MessageHistory from './Components/MessageHistory';
+// import MessageInput from './Components/MessageInput';
 
 const DUMMY_DATA = [
   {
@@ -23,9 +23,21 @@ function App() {
 
   return ( 
     <div className="app">
-        <Title />
-        <MessageHistory messages={messageState.messages} />
-        <MessageInput />
+        {/* <Title /> */}
+          {messageState.messages.map(message => {
+            return (
+             <li key={message.id}>
+               <div>
+                 {message.senderId}
+               </div>
+               <div>
+                 {message.text}
+               </div>
+             </li>
+           )
+         })}
+        {/* <MessageHistory messages={messageState.messages} /> */}
+        {/* <MessageInput /> */}
     </div>
  );
 }
