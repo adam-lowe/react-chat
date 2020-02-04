@@ -24,19 +24,7 @@ function App() {
   return ( 
     <div className="app">
         {/* <Title /> */}
-          {messageState.messages.map(message => {
-            return (
-             <li key={message.id}>
-               <div>
-                 {message.senderId}
-               </div>
-               <div>
-                 {message.text}
-               </div>
-             </li>
-           )
-         })}
-        <MessageHistory messages={"TestingProp"} />
+        <MessageHistory messages={messageState.messages} />
         {/* <MessageInput /> */}
     </div>
  );
