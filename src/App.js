@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from 'react';
 import { useState } from 'react';
 import './App.css';
 // import Title from './Components/Title';
@@ -20,18 +21,17 @@ const DUMMY_DATA = [
   }
 ]
 
-function App() {
-  const [messageState, setMessageState] = useState({
-    messages: DUMMY_DATA
-  });
-
+class App extends Component {
+  state = { messages: DUMMY_DATA}
+render() {
   return ( 
     <div className="app">
         {/* <Title /> */}
-        <MessageHistory messages={messageState.messages} />
+        <MessageHistory messages={this.state.messages} />
         {/* <MessageInput /> */}
     </div>
  );
+  }
 }
-
+ 
 export default App;
