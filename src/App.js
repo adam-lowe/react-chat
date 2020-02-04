@@ -1,9 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
-import Chatkit from '@pusher/chatkit-client';
+import Chatkit from '@pusher/chatkit-client-react';
 import './App.css';
 // import Title from './Components/Title';
-import MessageHistory from './Components/MessageHistory';
+import MessageList from './Components/MessageList';
 // import MessageInput from './Components/MessageInput';
 
 const instanceLocator = "v1:us1:800d59fe-fa6a-496b-92da-d13fd0fb3ad6"
@@ -23,17 +23,18 @@ const DUMMY_DATA = [
 ]
 
 class App extends Component {
-  state = { messages: DUMMY_DATA}
+  state = { messages: []}
 
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
       instanceLocator: instanceLocator,
-      userId: 'Gabachi',
+      userId: username,
       tokenProvider: new Chatkit.TokenProvider({
         url: testToken
       })
    })
    chatManager.connect().then(currentUser => {
+    this.currentUser = currentUser
     currentUser.subscribeToRoom({
     roomId: roomId,
     hooks: {
@@ -50,7 +51,7 @@ render() {
   return ( 
     <div className="app">
         {/* <Title /> */}
-        <MessageHistory messages={this.state.messages} />
+        <MessageList messages={this.state.messages} />
         {/* <MessageInput /> */}
     </div>
  );

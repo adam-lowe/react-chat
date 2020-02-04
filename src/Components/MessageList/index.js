@@ -5,7 +5,7 @@ function MessageList(props) {
         <ul className="message-list">
           {props.messages.map(message => {
             return (
-             <li key={message.id}>
+             <li key={message.id} className="message">
                <div>
                  {message.senderId}
                </div>
