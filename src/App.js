@@ -12,7 +12,7 @@ const DUMMY_DATA = [
   },
   {
     senderId: "janedoe",
-    text: "who'll win?"
+    text: "I'll win!"
   }
 ]
 
