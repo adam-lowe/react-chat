@@ -5,6 +5,7 @@ import {
   TokenProvider,
   withChatkit,
 } from "@pusher/chatkit-client-react"
+import axios from 'axios';
 import './App.css';
 // import Title from './Components/Title';
 import MessageList from './Components/MessageList';
@@ -15,6 +16,9 @@ const tokenProvider = new TokenProvider({
 });
 const instanceLocator = "v1:us1:800d59fe-fa6a-496b-92da-d13fd0fb3ad6"
 const userId = "Gabachi"
+const roomId = "f9ef568c-5b8a-4ba6-a35b-e90503b9c1cc"
+
+console.log(axios.get(`/rooms/${roomId}/messages`))
 
 class App extends Component {
   state = { messages: []}
