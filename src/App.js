@@ -15,13 +15,17 @@ const tokenProvider = new TokenProvider({
   url: "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/800d59fe-fa6a-496b-92da-d13fd0fb3ad6/token",
 });
 const instanceLocator = "v1:us1:800d59fe-fa6a-496b-92da-d13fd0fb3ad6"
+const instanceId = "800d59fe-fa6a-496b-92da-d13fd0fb3ad6"
 const userId = "Gabachi"
 const roomId = "f9ef568c-5b8a-4ba6-a35b-e90503b9c1cc"
 
 axios({
   method:'get',
-  url: `/rooms/${roomId}/messages`
-})
+  url: `https://us1.pusherplatform.io/services/chatkit/v6/${instanceId}/rooms/${roomId}/messages`
+})  
+  .then(function (response) {
+    console.log(response.data)
+});
 
 
 class App extends Component {
