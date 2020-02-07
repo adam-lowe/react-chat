@@ -5,9 +5,18 @@ import './App.css';
 import MessageList from './Components/MessageList';
 // import MessageInput from './Components/MessageInput';
 
-
+const DUMMY_DATA = [
+  {
+    senderId: "perborgen",
+    text: "who'll win?"
+  },
+  {
+    senderId: "janedoe",
+    text: "who'll win?"
+  }
+]
 class App extends Component {
-  state = { messages: []}
+  state = { messages: DUMMY_DATA}
 
 render() {
   return ( 
