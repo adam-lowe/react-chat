@@ -1,9 +1,9 @@
 import React from 'react';
 
-function MessageInput(props) {
+function NameModal(props) {
       return (
         <div></div>
       )
     }
 
-  export default MessageInput;
+  export default NameModal;
