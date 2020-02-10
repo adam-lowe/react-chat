@@ -73,6 +73,7 @@ html, body {
 
 .send-message-form input {
     width: 100%;
+    height: inherit;
     padding: 15px 10px;
     border: none;
     margin: 0;
@@ -85,5 +86,5 @@ html, body {
 }
 
 .send-message-form input::placeholder {
-    color: black;
+    color: gray;
 }

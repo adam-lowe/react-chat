@@ -22,8 +22,8 @@ class MessageInput extends Component {
   render() {
     return ( 
       <div className="MessageInput">
-        <form>
-            <input type="text" name="pendingMessage" />
+        <form className="send-message-form">
+            <input type="text" name="pendingMessage" id="messageInput" placeholder="Type your message and press ENTER" />
         </form>
       </div>
    );
