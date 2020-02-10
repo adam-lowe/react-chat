@@ -23,7 +23,7 @@ class MessageInput extends Component {
     return ( 
       <div className="MessageInput">
         <form>
-            <input type="text" name="name" />
+            <input type="text" name="pendingMessage" />
         </form>
       </div>
    );
