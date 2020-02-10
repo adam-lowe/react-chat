@@ -22,6 +22,9 @@ class MessageInput extends Component {
   render() {
     return ( 
       <div className="MessageInput">
+        <form>
+            <input type="text" name="name" />
+        </form>
       </div>
    );
     }
