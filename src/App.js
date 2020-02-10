@@ -3,7 +3,7 @@ import { Component } from 'react';
 import './App.css';
 // import Title from './Components/Title';
 import MessageList from './Components/MessageList';
-// import MessageInput from './Components/MessageInput';
+import MessageInput from './Components/MessageInput';
 
 const DUMMY_DATA = [
   {
@@ -23,7 +23,7 @@ render() {
     <div className="app">
         {/* <Title /> */}
         <MessageList messages={this.state.messages} />
-        {/* <MessageInput /> */}
+        <MessageInput />
     </div>
  );
   }
