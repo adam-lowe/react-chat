@@ -23,7 +23,7 @@ html, body {
     height: calc(100% - 100px); 
 }
 
-.title {
+.Title {
     display: flex;
     justify-content: center;
     align-items: center;
