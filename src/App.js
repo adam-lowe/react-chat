@@ -8,11 +8,15 @@ import MessageInput from './Components/MessageInput';
 const DUMMY_DATA = [
   {
     senderId: "perborgen",
-    text: "who'll win?"
+    text: "Who'll win?"
+  },
+  {
+    senderId: "eggtoast",
+    text: "Maybe this?"
   },
   {
     senderId: "janedoe",
-    text: "who'll win?"
+    text: "Definitely someone else!"
   }
 ]
 class App extends Component {
