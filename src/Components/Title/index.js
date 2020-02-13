@@ -5,7 +5,7 @@ class Title extends Component {
   render() {
     return ( 
       <div className="Title">
-       <h1>React-Chat</h1>
+       <h1>React-Chat-App</h1>
       </div>
    );
     }
