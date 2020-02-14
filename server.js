@@ -1,7 +1,8 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const logger = require("morgan");
+import mongojs from 'mongojs';
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import logger from "morgan"
 
 const app = express()
 
@@ -10,6 +11,15 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
+
+const databaseUrl = "messageHistory";
+const collections = ["messages"];
+
+const db = mongojs(databaseUrl, collections);
+
+db.on("error", error => {
+  console.log("Database Error:", error);
+});
 
 app.post("/submit", (req, res) => {
   console.log(req.body);
