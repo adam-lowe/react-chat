@@ -21,6 +21,16 @@ db.on("error", error => {
   console.log("Database Error:", error);
 });
 
+app.get("/all", (req, res) => {
+  db.messages.find({}, (err, found) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(found);
+    }
+  });
+});
+
 app.post("/submit", (req, res) => {
   console.log(req.body);
 });
