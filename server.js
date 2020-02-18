@@ -1,4 +1,4 @@
-import mongojs from 'mongojs';
+import mongoose from 'mongoose';
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
@@ -12,28 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
-const databaseUrl = "messageHistory";
-const collections = ["messages"];
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/userdb";
 
-const db = mongojs(databaseUrl, collections);
-
-db.on("error", error => {
-  console.log("Database Error:", error);
-});
-
-app.get("/all", (req, res) => {
-  db.messages.find({}, (err, found) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(found);
-    }
-  });
-});
-
-app.post("/submit", (req, res) => {
-  console.log(req.body);
-});
+mongoose.connect(MONGODB_URI);
 
 const PORT = 3001
 app.listen(PORT, err => {
