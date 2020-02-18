@@ -3,10 +3,6 @@ const Messages = require("../models/schema");
 
 var router = express.Router();
 
-// Import the model (workout.js) to use its database functions.
-
-// Create all our routes and set up logic within those routes where required.
-
 router.get("/api/messageHist", function(req, res) {
   console.log(req.body);
 
