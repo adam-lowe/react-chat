@@ -4,11 +4,17 @@ var message = {
       cb(res);
     });
   },
-  // The variables cols and vals are arrays.
-  add: function(cols, vals, cb) {
-    orm.create("messages", cols, vals, function(res) {
-      cb(res);
-    });
+  add: function(message) {
+    fetch("/api/messageHist", {
+        method: "post",
+        headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            message
+        })
+    })
   }
 };
 
