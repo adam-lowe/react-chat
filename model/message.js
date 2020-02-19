@@ -1,6 +1,6 @@
 var message = {
   all: function(cb) {
-    orm.all("messages", function(res) {
+    app.get("messages", function(res) {
       cb(res);
     });
   },
