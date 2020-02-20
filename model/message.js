@@ -1,20 +1,17 @@
+import express from 'express'
+
+const app = express()
+
 var message = {
   all: function(cb) {
-    app.get("messages", function(res) {
+    app.get("/messages", function(res) {
       cb(res);
     });
   },
   add: function(message) {
-    fetch("/api/messageHist", {
-        method: "post",
-        headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            message
-        })
-    })
+    app.post("/submit", (req, res) => {
+      console.log(req.body);
+    });
   }
 };
 
