@@ -6,7 +6,7 @@ var router = express.Router();
 router.get("/api/messageHist", function(req, res) {
   console.log(req.body);
 
-  Messages.find({}, (error, data) => {
+  Messages.all({}, (error, data) => {
     if (error) {
       res.send(error);
     } else {
@@ -16,7 +16,7 @@ router.get("/api/messageHist", function(req, res) {
 });
 
 router.post("/api/messageHist", function({ body }, res) {
-  Messages.create(body)
+  Messages.add(body)
     .then(dbMessages => {
       res.json(dbMessages);
     })
