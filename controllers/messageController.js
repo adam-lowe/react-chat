@@ -1,7 +1,4 @@
-var express = require("express");
 const Messages = require("../models/schema");
-
-var router = express.Router();
 
 router.get("/api/messageHist", function(req, res) {
   console.log(req.body);
