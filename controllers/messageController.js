@@ -25,10 +25,5 @@ router.post("/api/messageHist", function({ body }, res) {
     });
 });
 
-router.put("/api/messageHist/:id", function(req, res) {
-  var id = req.params.id;
-
-});
-
 // Export routes for server.js to use.
 module.exports = router;
