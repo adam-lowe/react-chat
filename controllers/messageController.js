@@ -1,7 +1,6 @@
 const Messages = require("../models/schema");
 
-router.get("/api/messageHist", function(req, res) {
-  console.log(req.body);
+
 
   Messages.all({}, (error, data) => {
     if (error) {
@@ -10,7 +9,7 @@ router.get("/api/messageHist", function(req, res) {
       res.json(data);
     }
   });
-});
+
 
 router.post("/api/messageHist", function({ body }, res) {
   Messages.add(body)

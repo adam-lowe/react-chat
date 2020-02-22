@@ -5,10 +5,11 @@ var router = express.Router();
 const app = express()
 
 var message = {
+
+  
   all: function(cb) {
-    app.get("/messages", function(res) {
-      cb(res);
-    });
+    router.get("/api/messageHist", function(req, res) {});
+  console.log(req.body);
   },
   add: function(message) {
     app.post("/submit", (req, res) => {
